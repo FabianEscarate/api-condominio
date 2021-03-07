@@ -9,6 +9,16 @@ Vivo en Condominio, y necesitaba un tema para poder desarrollar una __RestFullAP
 - nodeJs
 - npm
 
+## Variables de Entorno
+
+archivo ```.env``` en el directorio raíz del proyecto
+
+```env
+NODE_ENV=development
+HOST=127.0.0.1
+#PORT=4000
+```
+
 ## Como ejecutar
 
 ```powershell
