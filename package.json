@@ -1,0 +1,19 @@
+{
+  "name": "api-condominio",
+  "version": "1.0.0",
+  "description": "api restfull para condominio",
+  "scripts": {
+    "start": "node api/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fabian Escarate",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.11.19"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "eslint": "^7.21.0"
+  }
+}
