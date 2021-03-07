@@ -1,5 +1,3 @@
-// const path = require('path')
-// console.log(path.resolve('.env'))
 require('dotenv').config()
 
 const config = {
