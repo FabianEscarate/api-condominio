@@ -1,6 +1,15 @@
 // urls para la API
 var express = require('express')
 var router = express.Router()
-// var controller = require('./crontrollers.js')
+var controllers = require('./crontrollers.js')
 
-router.get('/',)
+router.route('/')
+    .get(controllers.getCondominios)
+    .post(controllers.postCondominio);
+
+router.route('/:id')
+    .get(controllers.getCondominioId)
+    .put(controllers.putCondominioId)
+    .delete(controllers.deleteCondominioId)
+
+module.exports = router

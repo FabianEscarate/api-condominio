@@ -1,10 +1,17 @@
 const config = require('./config.js')
-const mongoose = require('./mongo.js')(config)
 const express = require('express')
-const app = express();
+const app = express()
+
+// configuracion mantenedor urls
+app.use(express.json()) // for parsing application/json
+require('./urls.js')(app)
+// configuracion mongoDB
+require('./mongo.js')
+
+// app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
-    res.send('hola mundo !!!');
+    res.send('home')
 });
 
 app.listen(config.PORT, config.HOST, () => {

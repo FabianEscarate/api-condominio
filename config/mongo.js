@@ -1,10 +1,13 @@
+const mongoose = require('mongoose')
 
-const makeConnection = (config) => {
-    const mongoose = require('mongoose')
-    console.log(process.env.MONGOCONNECTION)
-    mongoose.connect(process.env.MONGOCONNECTION)
 
-    return mongoose
-}
+mongoose.connect(process.env.MONGOCONNECTION,
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }
+).catch((err) => {
+    console.error(err)
+})
 
-module.exports = makeConnection
+

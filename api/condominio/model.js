@@ -11,6 +11,7 @@ const ModelCondominio = new mongoose.model(
             lon: String
         }
     }, {
+        // collection: modelName,
         autoCreate: true
     })
 )
