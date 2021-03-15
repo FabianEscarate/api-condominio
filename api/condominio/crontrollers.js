@@ -7,22 +7,51 @@ const getCondominios = async (req, res) => {
 }
 
 const postCondominio = async (req, res) => {
-    console.log(req.body)
+
     let condominio = new ModelCondominio(req.body)
-    let resultSave = await condominio.save()
-    res.json(req.body)
+    let resultSave = await condominio.save().catch((err) => {
+        return {err}
+    })
+
+    if (resultSave.err) res.status(500).send(resultSave.err.message)
+
+    res.status(200).json(condominio)
 }
 
-const getCondominioId = (req, res) => {
-    res.send(req.baseUrl)
+const getCondominioId = async (req, res) => {
+    let id = req.params.id
+    let condominio = await ModelCondominio.findById(id).exec().catch((err) =>{
+        return {err}
+    })
+
+    if (!condominio) res.status(500).send('Elemento inexistente')
+    if (condominio?.err) res.status(500).send(condominio.err.message)
+
+    res.status(200).json(condominio)
 }
 
-const putCondominioId = (req, res) => {
-    res.send(req.baseUrl)
+const putCondominioId = async (req, res) => {
+    let body = req.body
+    if(body?._id) delete body._id
+    let id = req.params.id
+    let condominio = await ModelCondominio.findByIdAndUpdate(id, body).catch((err) => {
+        return {err}
+    })
+
+    if(!condominio) res.status(500).send('Elemento inexistente')
+    if (condominio.err) res.status(500).send(condominio.err.message)
+
+    res.status(200).json(condominio)
 }
 
-const deleteCondominioId = (req, res) => {
-    res.send(req.baseUrl)
+const deleteCondominioId = async (req, res) => {
+    let id = req.params.id
+    let condominio = await ModelCondominio.findByIdAndDelete(id).exec()
+
+    if(!condominio) res.status(500).send('Elemento inexistente')
+    if(condominio.err) res.status(500).send(condominio.err.message)
+
+    res.status(200).json(condominio)
 }
 
 module.exports = {

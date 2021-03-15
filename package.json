@@ -4,6 +4,7 @@
   "description": "api restfull para condominio",
   "scripts": {
     "start": "node --trace-warnings config/index.js",
+    "dev": "npx nodemon config/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Fabian Escarate",
@@ -14,6 +15,7 @@
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
-    "eslint": "^7.21.0"
+    "eslint": "^7.21.0",
+    "nodemon": "^2.0.7"
   }
 }

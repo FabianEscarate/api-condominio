@@ -5,13 +5,20 @@ const modelName = 'condominio';
 const ModelCondominio = new mongoose.model(
     modelName,
     new mongoose.Schema({
-        name: String,
+        name: {
+            type: String,
+            unique: true
+        },
+        address: String,
+        state: String,
+        city: String,
+        commune: String,
         location: {
             lat: String,
             lon: String
         }
     }, {
-        // collection: modelName,
+        collection: modelName,
         autoCreate: true
     })
 )
