@@ -1,9 +1,10 @@
-const config = require('./config.js')
 const express = require('express')
-const app = express()
+var app = express()
+// const hbs = require('')
 
+// cargar configuracion de App
+require('./config.js')(app)
 // configuracion mantenedor urls
-app.use(express.json()) // for parsing application/json
 require('./urls.js')(app)
 // configuracion mongoDB
 require('./mongo.js')
@@ -11,9 +12,10 @@ require('./mongo.js')
 // app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
-    res.send('home')
+    console.log(this)
+    res.render('home')
 });
 
-app.listen(config.PORT, config.HOST, () => {
-    console.log(`App listening on http:\\${config.HOST}:${config.PORT}`);
+app.listen(process.env.PORT, process.env.HOST, () => {
+    console.log(`App listening on http:\\${process.env.HOST}:${process.env.PORT}`);
 });
