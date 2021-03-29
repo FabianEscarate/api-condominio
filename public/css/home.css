@@ -12,13 +12,40 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-image: url('img/imgHome.png'); */
 }
 
 .flex-item{
     background-color: aqua;
     width: 40vw;
-    height: 10vh;
+    height: 80vmin;
     /* align-self: center; */
     /* max-height: 1vh; */
+}
+
+.seccion-logo{
+    /* background-image: url('img/imgHome.png'); */
+    background-color: black;
+    height: 20%;
+}
+
+.seccion-title{
+    background-color: blue;
+    height: 15%;
+    size: 3 em;
+}
+
+.seccion-descripcion {
+    background-color: crimson;
+    height: 60%;
+    /* margin: 1em 0em; */
+}
+
+.seccion-descripcion p {
+    margin: 0em;
+    padding: 1em 0em;
+}
+
+.seccion-footer {
+    background-color: coral;
+    height: 5%;
 }
