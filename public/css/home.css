@@ -1,4 +1,10 @@
+@font-face{
+    font-family: CascadiaCode-Light;
+    src: url("../font/CascadiaCode-Light.otf");
+}
+
 body{
+    font-family: CascadiaCode-Light;
     margin: auto;
 }
 
@@ -18,6 +24,7 @@ body{
     background-color: aqua;
     width: 40vw;
     height: 80vmin;
+    text-align: center;
     /* align-self: center; */
     /* max-height: 1vh; */
 }
@@ -31,18 +38,21 @@ body{
 .seccion-title{
     background-color: blue;
     height: 15%;
-    size: 3 em;
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .seccion-descripcion {
     background-color: crimson;
     height: 60%;
-    /* margin: 1em 0em; */
+    overflow-y: auto;
 }
 
 .seccion-descripcion p {
     margin: 0em;
-    padding: 1em 0em;
+    padding: 1em 0.5em;
 }
 
 .seccion-footer {

@@ -5,7 +5,7 @@ const hbs = require('hbs')
 __dirname = path.resolve(path.join(__dirname,'../'))
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'
-process.env.HOST = process.env.HOST || '127.0.0.1'
+process.env.HOST = process.env.HOST || '0.0.0.0'
 process.env.PORT = process.env.PORT || 5000
 
 const loadConfig = (app) =>{
