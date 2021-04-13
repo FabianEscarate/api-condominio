@@ -1,1 +1,0 @@
-// rutas para el sitio administrador
