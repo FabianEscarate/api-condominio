@@ -46,7 +46,12 @@ background: repeating-linear-gradient(
 }
 
 .seccion-logo{
-    /* background-image: url('img/imgHome.png'); */
+    background-image: url('../img/LogoApi.svg');
+    background-size: 15em;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    /* padding: 5px 5px; */
     /* background-color: black; */
     height: 20%;
 }
