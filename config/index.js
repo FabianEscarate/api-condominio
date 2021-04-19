@@ -3,7 +3,7 @@ var app = express()
 // const hbs = require('')
 
 // cargar configuracion de App
-require('./config.js')(app)
+require('./settings.js')(app)
 // configuracion mantenedor urls
 require('./urls.js')(app)
 // configuracion mongoDB
