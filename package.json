@@ -14,7 +14,8 @@
     "express": "^4.17.1",
     "hbs": "^4.1.1",
     "hbs-utils": "^0.0.4",
-    "mongoose": "^5.12.0"
+    "mongoose": "^5.12.0",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.10",
