@@ -1,9 +1,9 @@
 
-const home = async (req, res) => {
+const index = async (req, res) => {
 
     res.render('admin/index')
 }
 
 module.exports = {
-    home
+    index
 }

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose =require('mongoose')
 const ModelCondominio = require('../condominio/model.js');
 
 const modelName = 'casa';

@@ -1,15 +1,16 @@
 // urls para la API
-var express = require('express')
-var router = express.Router()
-var controllers = require('./controllers.js')
+const express = require("express");
+const router = express.Router();
+const routeDashboard = require("./dashboard/urls");
+const routeCollections = require("./collections/urls");
+const routeLogin = require("./login/urls");
+const controllers = require("./controllers.js");
 
-router.route('/')
-    .get(controllers.home);
-    // .post(controllers.postCondominio);
+router.route("/").get(controllers.home);
+// .post(controllers.postCondominio);
 
-// router.route('/:id')
-//     .get(controllers.getCondominioId)
-//     .put(controllers.putCondominioId)
-//     .delete(controllers.deleteCondominioId)
+router.use("/dashboard", routeDashboard);
+router.use("/collections", routeCollections);
+router.use("/login", routeLogin);
 
-module.exports = router
+module.exports = router;

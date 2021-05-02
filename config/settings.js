@@ -10,7 +10,8 @@ process.env.HOST = process.env.HOST || "0.0.0.0";
 process.env.PORT = process.env.PORT || 5000;
 
 const loadConfig = (app) => {
-  app.use(require("express").json()); // for parsing application/json
+  // for parsing application/json
+  app.use(require("express").json());
 
   // TEMPLATES
   app.set("view engine", "html");
@@ -19,7 +20,7 @@ const loadConfig = (app) => {
   hbsUtils.registerWatchedPartials(__dirname + "/templates");
 
   // LOGS
-  app.use(require('morgan')('common'))
+  app.use(require("morgan")("common"));
 
   // ASSETS
   app.use(require("express").static(path.join(__dirname, "/public")));
