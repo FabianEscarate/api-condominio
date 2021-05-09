@@ -1,11 +1,10 @@
 const login = async (req, res) => {
   strMethod = "";
   if (req.method == "GET") {
-    res.render('admin/login');
+    res.render("admin/login");
   }
   if (req.method == "POST") {
-    
-    res.redirect('/admin')
+    res.redirect("/admin");
   }
 };
 

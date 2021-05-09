@@ -1,9 +1,12 @@
 // urls para la API
-var express = require("express");
-var router = express.Router();
-var controllers = require("./controllers.js");
+const express = require("express");
+const router = express.Router();
+const controllers = require("./controllers.js");
+const passportLocalConfig = require("./../passportJs/config");
 
-router.route("/").all(controllers.login);
-// .post(controllers.postCondominio);
+router
+  .route("/")
+  .get(controllers.login)
+  .post(passportLocalConfig.loginAuthentication);
 
 module.exports = router;
