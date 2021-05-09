@@ -1,21 +1,25 @@
-const express = require('express')
-var app = express()
+const express = require("express");
+var app = express();
 // const hbs = require('')
 
 // cargar configuracion de App
-require('./settings.js')(app)
+require("./settings.js")(app, express);
 // configuracion mantenedor urls
-require('./urls.js')(app)
+require("./urls.js")(app);
 // configuracion mongoDB
-require('./mongo.js')
+require("./mongo.js");
 
 // app.use(express.urlencoded({ extended: true }))
 
-app.get('/', (req, res) => {
-    console.log(this)
-    res.render('home')
+app.get("/", (req, res) => {
+  console.log(this);
+  res.render("home");
 });
 
 app.listen(process.env.PORT, process.env.HOST, () => {
-    console.log(`App listening on http:\\${process.env.HOST}:${process.env.PORT}`);
+  console.log(
+    `App listening on http:\\${process.env.HOST}:${process.env.PORT}`
+  );
 });
+
+// console.log(new Date().toString());

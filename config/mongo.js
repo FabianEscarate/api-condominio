@@ -5,6 +5,9 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
+  .then(() => {
+    // no entrega nada la conexion de mongo
+  })
   .catch((err) => {
     console.error(err);
   });

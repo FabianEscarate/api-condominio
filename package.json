@@ -4,18 +4,22 @@
   "description": "api restfull para condominio",
   "scripts": {
     "start": "node --trace-warnings config/index.js",
-    "dev": "npx nodemon config/index.js",
+    "dev": "npx nodemon config/index.js --inspect",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Fabian Escarate",
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "connect-flash": "^0.1.1",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "hbs": "^4.1.1",
     "hbs-utils": "^0.0.4",
     "mongoose": "^5.12.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.10",
