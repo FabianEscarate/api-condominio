@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
-const modelProfile = require("./profile");
+const { connection, schemaInstance } = require("./../../config/mongo.js");
+const modelProfile = require("./profile.js");
 
 const modelName = "user";
 
-const schema = new mongoose.Schema(
+const schema = new schemaInstance(
   {
     email: {
       type: String,
@@ -38,6 +38,6 @@ const methodsForSchema = {
 
 schema.methods = methodsForSchema;
 
-const ModelCondominio = new mongoose.model(modelName, schema);
+const ModelCondominio = connection.model(modelName, schema);
 
 module.exports = ModelCondominio;

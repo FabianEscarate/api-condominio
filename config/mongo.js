@@ -1,13 +1,21 @@
 const mongoose = require("mongoose");
 
-mongoose
-  .connect(process.env.MONGOCONNECTION, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    // no entrega nada la conexion de mongo
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+const connection = mongoose.createConnection(process.env.MONGOCONNECTION, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  connectTimeoutMS: 2000,
+  waitQueueTimeoutMS: 5000,
+  serverSelectionTimeoutMS: 5000,
+});
+
+connection.on("error", (error) => {
+  console.log(error);
+  throw "Can't connect to Database";
+});
+
+module.exports = {
+  connection: connection,
+  modelInstance: mongoose.model,
+  schemaInstance: mongoose.Schema,
+  SchemaTypes: mongoose.SchemaTypes,
+};

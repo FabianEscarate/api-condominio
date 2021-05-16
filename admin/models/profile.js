@@ -1,10 +1,9 @@
-const mongoose = require("mongoose");
-
+const { connection, schemaInstance } = require("./../../config/mongo.js");
 const modelName = "profile";
 
-const ModelProfile = new mongoose.model(
+const ModelProfile = connection.model(
   modelName,
-  new mongoose.Schema(
+  new schemaInstance(
     {
       name: String,
       lastname: String,

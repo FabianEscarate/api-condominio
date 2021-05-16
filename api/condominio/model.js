@@ -1,26 +1,29 @@
-const mongoose = require('mongoose')
+const { connection, schemaInstance } = require("./../../config/mongo.js");
 
-const modelName = 'condominio';
+const modelName = "condominio";
 
-const ModelCondominio = new mongoose.model(
-    modelName,
-    new mongoose.Schema({
-        name: {
-            type: String,
-            unique: true
-        },
-        address: String,
-        state: String,
-        city: String,
-        commune: String,
-        location: {
-            lat: String,
-            lon: String
-        }
-    }, {
-        collection: modelName,
-        autoCreate: true
-    })
-)
+const ModelCondominio = connection.model(
+  modelName,
+  new schemaInstance(
+    {
+      name: {
+        type: String,
+        unique: true,
+      },
+      address: String,
+      state: String,
+      city: String,
+      commune: String,
+      location: {
+        lat: String,
+        lon: String,
+      },
+    },
+    {
+      collection: modelName,
+      autoCreate: true,
+    }
+  )
+);
 
-module.exports = ModelCondominio
+module.exports = ModelCondominio;
