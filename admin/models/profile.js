@@ -7,6 +7,7 @@ const ModelProfile = new mongoose.model(
   new mongoose.Schema(
     {
       name: String,
+      lastname: String,
       gender: String,
       location: String,
       website: String,

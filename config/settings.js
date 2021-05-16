@@ -1,8 +1,8 @@
 require("dotenv").config();
 const path = require("path");
-const passport = require("passport");
 const hbs = require("hbs");
 const hbsUtils = require("hbs-utils")(hbs);
+const passport = require("passport");
 const connectFlash = require("connect-flash");
 const session = require("express-session");
 
@@ -13,6 +13,7 @@ process.env.HOST = process.env.HOST || "0.0.0.0";
 process.env.PORT = process.env.PORT || 5000;
 process.env.SESSION_SECRET = process.env.SESSION_SECRET || "productionSession";
 
+// Passport Config session
 let sess = {
   secret: process.env.SESSION_SECRET,
   cookie: {},

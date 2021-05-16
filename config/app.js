@@ -1,6 +1,8 @@
 const express = require("express");
 var app = express();
-// const hbs = require('')
+const passport = require("passport");
+const connectFlash = require("connect-flash");
+const session = require("express-session");
 
 // cargar configuracion de App
 require("./settings.js")(app, express);
@@ -12,14 +14,7 @@ require("./mongo.js");
 // app.use(express.urlencoded({ extended: true }))
 
 app.get("/", (req, res) => {
-  console.log(this);
-  res.render("home");
+  res.status(200).render("home");
 });
 
-app.listen(process.env.PORT, process.env.HOST, () => {
-  console.log(
-    `App listening on http:\\${process.env.HOST}:${process.env.PORT}`
-  );
-});
-
-// console.log(new Date().toString());
+module.exports = { app, express };
