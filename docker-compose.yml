@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+    
+    mongo:
+        container_name: 
+            "api-condominio-mongo"
+        image: mongo:latest
+        ports: 
+            - "27017:27017"
+        networks: 
+            - apiCondominioNetwork
+        environment: 
+            - MONGO_INITDB_DATABASE="api-condominio"
+        restart: "always"
+        volumes: 
+            - /mongoDBVolumen:/var/lib/mongoDB
+
+    app:
+        container_name: 
+            "api-condominio-app"
+        build: .
+        ports: 
+            - "3000:3000"
+        networks: 
+            - apiCondominioNetwork
+        depends_on: 
+            - mongo
+        environment: 
+            - VIRTUAL_HOST=app
+            - DB_HOST=mongo
+            - MONGOCONNECTION=mongodb://mongo:27017/api-condominio
+        volumes: 
+            - .:/var/app
+
+volumes:
+    mongoDBVolumen:
+    app:
+
+networks: 
+    apiCondominioNetwork:
