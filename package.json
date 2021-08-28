@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "api restfull para condominio",
   "scripts": {
-    "start": "node --trace-warnings config/server.js",
-    "dev": "npx nodemon config/server.js --inspect  --trace-warnings",
+    "start": "node -r dotenv/config --trace-warnings config/server.js",
+    "dev": "npx -n --inspect nodemon --require dotenv/config config/server.js  --trace-warnings",
     "test": "npx jest --watch"
   },
   "author": "Fabian Escarate",

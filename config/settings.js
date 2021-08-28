@@ -1,4 +1,3 @@
-require("dotenv").config();
 const path = require("path");
 const hbs = require("hbs");
 const hbsUtils = require("hbs-utils")(hbs);
