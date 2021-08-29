@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node -r dotenv/config --trace-warnings config/server.js",
     "dev": "npx -n --inspect nodemon --require dotenv/config config/server.js  --trace-warnings",
-    "test": "npx jest --watch"
+    "test": "npx jest --watch",
+    "generateSuperUser": "node -r dotenv/config config/generateSuperUser.js"
   },
   "author": "Fabian Escarate",
   "license": "ISC",
@@ -25,6 +26,7 @@
     "@babel/cli": "^7.13.10",
     "@babel/core": "^7.13.13",
     "@babel/preset-env": "^7.13.12",
+    "boxen": "^5.0.1",
     "dotenv": "^8.2.0",
     "eslint": "^7.21.0",
     "jest": "^26.6.3",

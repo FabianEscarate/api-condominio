@@ -1,4 +1,5 @@
 const { connection, schemaInstance } = require("./../../config/mongo.js");
+
 const modelName = "profile";
 
 const ModelProfile = connection.model(
