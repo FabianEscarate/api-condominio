@@ -10,15 +10,15 @@ services:
             - "27017:27017"
         environment: 
             - MONGO_INITDB_DATABASE="api-condominio"
-        restart: always
+        # restart: always
         volumes: 
-            - mongoDBVolumen:/data/db
+            - mongoDBVolumen
 
     app:
         container_name: 
             "api-condominio-app"
         build: .
-        restart: always
+        # restart: always
         ports: 
             - "3000:3000"
         depends_on: 
