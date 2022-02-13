@@ -2,18 +2,18 @@
   "compilerOptions": {
     "target": "ES2021",
     "module": "CommonJS",
-    "rootDir": "./",
     "strict": false,
     "esModuleInterop": true,
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
     "outDir": "dist",
-    "sourceMap": false,
+    "sourceMap": true,
     "baseUrl": "./",
     "paths": {
-      "@Infraestructure/*": ["Infraestructure/*"]
+      "@Infraestructure/*": ["src/Infraestructure/*"]
     }
   },
+  "include": ["./src/**/*.ts"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

@@ -1,4 +1,4 @@
-const { connection, schemaInstance } = require("./../../config/mongo.js");
+const { connection, schemaInstance } = require("../../config/mongo.js.js");
 const ModelCondominio = require("../condominio/model.js");
 
 const modelName = "casa";

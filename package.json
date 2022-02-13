@@ -4,7 +4,7 @@
   "description": "api restfull para condominio",
   "scripts": {
     "start": "node -r dotenv/config --trace-warnings config/server.js",
-    "dev": "npx -n --inspect nodemon --require dotenv/config index.ts  --trace-warnings",
+    "dev": "npx -n --inspect nodemon --require dotenv/config src/index.ts  --trace-warnings",
     "test": "npx jest --watch",
     "generateSuperUser": "node -r dotenv/config config/generateSuperUser.js"
   },

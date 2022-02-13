@@ -1,5 +1,5 @@
 module.exports = {
-  moduleFileExtensions: ["js"],
-  testMatch: ["**/test/**/*.test.(js)"],
+  moduleFileExtensions: ["ts"],
+  testMatch: ["**/test/**/*.test.(ts)"],
   testEnvironment: "node",
 };
