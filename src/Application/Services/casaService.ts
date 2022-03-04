@@ -1,4 +1,5 @@
-import { Casa } from "../Entitires/casa";
+import { DTOCasa } from "../DTOs/casa";
+import { Casa } from "../Entities/casa";
 
 export interface ICasaServicePort {
   addCasa: (casa: Casa) => Promise<Casa>;
@@ -13,7 +14,7 @@ interface ICasaServiceRepository {
   casaRepository: ICasaServicePort;
   addCasa: (casa: Casa) => Promise<Casa>;
   getCasa: (
-    idCasa?: number
+    idCasa?: number | undefined
   ) => Promise<typeof idCasa extends number ? Casa : Array<Casa>>;
   updateCasa: (casa: Casa) => Promise<Casa>;
   deleteCasa: (idCasa: number) => Promise<Casa>;
@@ -33,11 +34,13 @@ export class casaService extends Casa implements ICasaServiceRepository {
   };
   getCasa = async (idCasa?: number | undefined) => {
     let result;
+    const dtoCasa = new DTOCasa({});
+    dtoCasa.validate();
     if (idCasa) result = await this.casaRepository.getCasa(idCasa);
     else result = await this.casaRepository.getCasa();
 
     return result;
   };
-  updateCasa: (casa: Casa) => Promise<Casa>;
-  deleteCasa: (idCasa: number) => Promise<Casa>;
+  updateCasa!: (casa: Casa) => Promise<Casa>;
+  deleteCasa!: (idCasa: number) => Promise<Casa>;
 }

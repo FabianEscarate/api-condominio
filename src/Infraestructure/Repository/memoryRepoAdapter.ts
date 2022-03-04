@@ -1,5 +1,5 @@
-import { Casa } from "src/Application/Entitires/casa";
-import { ICasaServicePort } from "src/Application/Services/casaService";
+import { Casa } from "../../Application/Entities/casa";
+import { ICasaServicePort } from "../../Application/Services/casaService";
 
 export class CasaRepo implements ICasaServicePort {
   casaData: any[];
@@ -15,6 +15,6 @@ export class CasaRepo implements ICasaServicePort {
     if (idCasa) return this.casaData[idCasa - 1];
     else return this.casaData;
   };
-  updateCasa: (casa: Casa) => Promise<Casa>;
-  deleteCasa: (idCasa: number) => Promise<Casa>;
+  updateCasa!: (casa: Casa) => Promise<Casa>;
+  deleteCasa!: (idCasa: number) => Promise<Casa>;
 }

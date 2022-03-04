@@ -1,3 +1,5 @@
+import { casaService } from "./casaService";
+
 enum ENDPOINTS {
   CASA = "/casa",
 }
@@ -14,18 +16,20 @@ export enum SERVERSTATUS {
   DOWN = "DOWN",
 }
 
-type serverAction = (...[]) => Promise<any>;
+type serverAction = (...[]:any) => Promise<any>;
 
 type httpVerbAction = {
   [prop in HTTPVERBS]?: serverAction;
 };
 
 export type endpointsSetup = {
-  [prop in ENDPOINTS]?: httpVerbAction;
+  [prop in ENDPOINTS]: httpVerbAction;
 };
 
 export interface IWebServicePort {
   endpoints: endpointsSetup;
+  casaService:casaService;
   getStatus: () => SERVERSTATUS;
+  setupEndpoints: () => void;
   installEndpoints: () => void;
 }
