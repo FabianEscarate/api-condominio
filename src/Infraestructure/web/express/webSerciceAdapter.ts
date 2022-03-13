@@ -1,5 +1,5 @@
 import express from "express";
-import { createServer } from "http";
+import { createServer, Server } from "http";
 import { casaService } from "../../../Application/Services/casaService";
 import {
   endpointsSetup,
@@ -9,7 +9,7 @@ import {
 
 export class WebServiceAdapter implements IWebServicePort {
   static PORT = 3000;
-  private server: any;
+  private server: Server;
   private webApp: any;
   endpoints!: endpointsSetup;
   casaService: casaService;
@@ -28,6 +28,7 @@ export class WebServiceAdapter implements IWebServicePort {
       console.log(`Server Running in port: ${WebServiceAdapter.PORT}`);
     });
   }
+  
   getStatus = () => {
     return this.server ? SERVERSTATUS.UP : SERVERSTATUS.DOWN;
   };

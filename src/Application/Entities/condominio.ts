@@ -7,7 +7,7 @@ export interface ICondominio {
 }
 
 export class Condominio implements ICondominio {
-  name: string;
-  address: string;
-  houses: [ICasa];
+  name!: string;
+  address!: string;
+  houses!: [ICasa];
 }
